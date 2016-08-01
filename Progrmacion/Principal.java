@@ -7,8 +7,14 @@
 
 public class Principal{
 	public static void main(String args[]){
-		Sort miSort=new Sort();
-
 		
+		Random miRandom=new Random(3);
+		miRandom.setLista();
+		Sort miSort=new Sort(miRandom.getLista());
+		Externo miArchivo=new Externo();
+
+		System.out.println(miRandom.getLista());
+
+		miArchivo.enviar(miRandom.getLista(),"C:/Users/rowor/Documents/Universidad del Valle/4to Semestre/ADT/Hojas de TRabajo/hoja3/datos.txt");
 	}
 }

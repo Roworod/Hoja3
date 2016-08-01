@@ -8,23 +8,32 @@
 //******************************************
 
 public class Random{
-	private int[] lista;
+	private int[] miLista;
 	private int tamano;
 
+	/**
+	*@pre: miLista existe
+	*@post: llena miLista con 
+	*numeros aleatorios
+	*/
 	public void setLista(){
-		//pre: miLista existe
-		//post: llena miLista con 
-		//numeros aleatorios
 		miLista=new int[tamano];
 		for(int i=0;i<tamano;i++){
 			miLista[i]=(int)(Math.random()*3000+10);
 		}
 	}
 
+	/**
+	*@return: int[]
+	*/
 	public int[] getLista(){
-		return lista;
+		return miLista;
 	}
 
+	/**
+	*@pre: int tamano existe
+	*@post: this.tamano=tamano
+	*/
 	public Random(int tamano){
 		this.tamano=tamano;
 	}

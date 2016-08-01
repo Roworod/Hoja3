@@ -15,27 +15,50 @@ public class Sort implements Comparable{
 		this.miLista=miLista;
 	}
 
+	/**
+	*@pre: miLista[] existe
+	*@return: int []
+	*/
 	public int[] selectionSort(){
-
+		return miLista;
 	}
 
+	/**
+	*@pre: miLista[] existe
+	*@return: int []
+	*/
 	public int[] insertionSort(){
-
+		return miLista;
 	}
 
+	/**
+	*@pre: miLista[] existe
+	*@return: int []
+	*/
 	public int[] mergeSort(){
-
+		return miLista;
 	}
 
+	/**
+	*@pre: miLista[] existe
+	*@return: int []
+	*/
 	public int[] quickSort(){
-
+		return miLista;
 	}
 
+	/**
+	*@pre: miLista[] existe
+	*@return: int []
+	*/
 	public int[] radixSort(){
-
+		return miLista;
 	}
 
-
+	/**
+	*@pre: miLista[] existe
+	*@return: int []
+	*/
 	public int[] getLista(){
 		return miLista;
 	}
@@ -44,27 +67,25 @@ public class Sort implements Comparable{
 
 	}
 
-	public void deicidir(int desicion){
+	/**
+	*@pre: miLista[] existe
+	*@return: int []
+	*/
+	public int[] deicidir(int desicion){
 		if (desicion==0)
-			selectionSor();
+			return selectionSort();
 		else if(desicion==1)
-			insertionSort();
+			return insertionSort();
 		else if (desicion==2)
-			mergeSort();
+			return mergeSort();
 		else if(desicion==3)
-			quickSort();
+			return quickSort();
 		else
-			radixSort();
+			return radixSort();
 	}
 
 
-
-
-
-
-
-
-
-
-
+	public int compareTo(Object o){
+		return 1;
+	}
 }
