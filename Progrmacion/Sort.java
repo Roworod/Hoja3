@@ -20,6 +20,19 @@ public class Sort implements Comparable{
 	*@return: int []
 	*/
 	public int[] selectionSort(){
+	int i, j, minIndex, tmp;
+      int n = miLista.length;
+      for (i = 0; i < n - 1; i++) {
+            minIndex = i;
+            for (j = i + 1; j < n; j++)
+                  if (miLista[j] < miLista[minIndex])
+                        minIndex = j;
+            if (minIndex != i) {
+                  tmp = miLista[i];
+                  miLista[i] = miLista[minIndex];
+                  miLista[minIndex] = tmp;
+            }
+      }
 		return miLista;
 	}
 
@@ -28,32 +41,16 @@ public class Sort implements Comparable{
 	*@return: int []
 	*/
 	public int[] insertionSort(){
+		for (int i=0;i<miLista.length;i++){
+			int temp=miLista[i];
+			int j;
+			for(j=i-1;j>=0 && temp<miLista[j]; j--)
+				miLista[j+1]=miLista[j];
+			miLista[j+1]=temp;
+		}
 		return miLista;
 	}
 
-	/**
-	*@pre: miLista[] existe
-	*@return: int []
-	*/
-	public int[] mergeSort(){
-		return miLista;
-	}
-
-	/**
-	*@pre: miLista[] existe
-	*@return: int []
-	*/
-	public int[] quickSort(){
-		return miLista;
-	}
-
-	/**
-	*@pre: miLista[] existe
-	*@return: int []
-	*/
-	public int[] radixSort(){
-		return miLista;
-	}
 
 	/**
 	*@pre: miLista[] existe
@@ -71,17 +68,11 @@ public class Sort implements Comparable{
 	*@pre: miLista[] existe
 	*@return: int []
 	*/
-	public int[] deicidir(int desicion){
-		if (desicion==0)
+	public int[] decidir(int desicion){
+		if (desicion==1)
 			return selectionSort();
-		else if(desicion==1)
+		else if(desicion==2)
 			return insertionSort();
-		else if (desicion==2)
-			return mergeSort();
-		else if(desicion==3)
-			return quickSort();
-		else
-			return radixSort();
 	}
 
 

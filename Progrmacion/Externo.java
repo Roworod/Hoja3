@@ -17,41 +17,52 @@ public class Externo{
 	public void enviar(int[] lista, String path){
 		File file=new File(path);
 
-	try {
-		FileWriter f=new FileWriter(file);
-		BufferedWriter b=new BufferedWriter(f);
-		String temp2="";
-		for (int i=0;i<lista.length;i++){
-			int temp1=lista[i];	
-			String temporal=Integer.toString(temp1);
-			temp2=temp2 + ";" + temporal;	
+		try {
+			FileWriter f=new FileWriter(file);
+			BufferedWriter b=new BufferedWriter(f);
+			String temp2=Integer.toString(lista[0]);
+			for (int i=1;i<lista.length;i++){
+				int temp1=lista[i];	
+				String temporal=Integer.toString(temp1);
+				temp2=temp2 + ";\n" + temporal;	
+			}
+			b.write(temp2);
+			b.close();
+			f.close();
 		}
-		b.write(temp2);
-		b.close();
-		f.close();
-	}
-	catch (Exception e){
-		System.out.println("error");
-	}
-
-
-
+		catch (Exception e){
+			System.out.println("error");
+		}
 	}
 
 	/**
 	*@retun: int[]
 	*/
-	public String recibir(String path){
+	public int[] recibir(String path){
+		int[] tempLista=new int[10];
+		BufferedReader br=null;
+		int i=0;
 		try {
-			FileInputStream dirtxt;
-			dirtxt = new FileInputStream(direccionx);
-			DataInputStream lineas = new DataInputStream(dirtxt);
-			BufferedReader memoriabuf = new BufferedReader(new InputStreamReader(lineas));
-			operaciones=memoriabuf.readLine();
-			lineas.close();
-		}catch(Exception e){
-			System.err.println("Error Fatal");
+		br=new BufferedReader(new FileReader(path));
+		String tempString;
+		while((tempString=br.readLine()) !=null){
+			String[] tempSplit=tempString.split(";");
+			tempLista[i]=Integer.parseInt(tempSplit[0]);
+			i++;
+		}
+		}catch(IOException e){
+			System.out.println("Otra vez error mano?");
 			
 		}
+		finally{
+			try{
+				if(br != null)
+					br.close();
+			}
+			catch (IOException ex){
+				System.out.println("ANOTHER ONE");
+			}
+		}
+		return tempLista;
 	}
 }

@@ -2430,12 +2430,12 @@
 <XPD:ATTR name="Name" type="string">recibir</XPD:ATTR>
 <XPD:REF name="Owner">Ao7h5djD1Um03bvcAnf9cAAA</XPD:REF>
 <XPD:ATTR name="#Parameters" type="integer">2</XPD:ATTR>
-<XPD:OBJ name="Parameters[0]" type="UMLParameter" guid="Sqx1PhUTo0SY3d6rtr0lygAA">
+<XPD:OBJ name="Parameters[0]" type="UMLParameter" guid="MUPF3TFtmU+I05/LfqijRgAA">
 <XPD:ATTR name="DirectionKind" type="UMLParameterDirectionKind">pdkReturn</XPD:ATTR>
-<XPD:ATTR name="TypeExpression" type="string">String</XPD:ATTR>
+<XPD:ATTR name="TypeExpression" type="string">int[ ]</XPD:ATTR>
 <XPD:REF name="BehavioralFeature">f2hJFtIjQ0SnS9WekjGf7wAA</XPD:REF>
 </XPD:OBJ>
-<XPD:OBJ name="Parameters[1]" type="UMLParameter" guid="JsvOuBJzaUalaYGHzNeY/gAA">
+<XPD:OBJ name="Parameters[1]" type="UMLParameter" guid="eE/m0cmhjEWBqzqj4H/OyAAA">
 <XPD:ATTR name="Name" type="string">String</XPD:ATTR>
 <XPD:ATTR name="TypeExpression" type="string">direccion</XPD:ATTR>
 <XPD:REF name="BehavioralFeature">f2hJFtIjQ0SnS9WekjGf7wAA</XPD:REF>
