@@ -1,0 +1,79 @@
+/**
+ *
+ * @author GerardoEnrique
+ */
+import java.lang.*;
+import java.util.*;
+
+public class Sort implements Comparable{
+	private int miLista[];
+
+	public Sort(int [] miLista){
+		this.miLista=miLista;
+	}
+
+	/**
+	*@pre: miLista[] existe
+	*@return: int []
+	*/
+	public int[] selectionSort(){
+	int i, j, minIndex, tmp;
+      int n = miLista.length;
+      for (i = 0; i < n - 1; i++) {
+            minIndex = i;
+            for (j = i + 1; j < n; j++)
+                  if (miLista[j] < miLista[minIndex])
+                        minIndex = j;
+            if (minIndex != i) {
+                  tmp = miLista[i];
+                  miLista[i] = miLista[minIndex];
+                  miLista[minIndex] = tmp;
+            }
+      }
+		return miLista;
+	}
+
+	/**
+	*@pre: miLista[] existe
+	*@return: int []
+	*/
+	public int[] insertionSort(){
+		for (int i=0;i<miLista.length;i++){
+			int temp=miLista[i];
+			int j;
+			for(j=i-1;j>=0 && temp<miLista[j]; j--)
+				miLista[j+1]=miLista[j];
+			miLista[j+1]=temp;
+		}
+		return miLista;
+	}
+
+
+	/**
+	*@pre: miLista[] existe
+	*@return: int []
+	*/
+	public int[] getLista(){
+		return miLista;
+	}
+
+	public void exit(){
+
+	}
+
+	/**
+	*@pre: miLista[] existe
+	*@return: int []
+	*/
+	public int[] decidir(int desicion){
+		if (desicion==1)
+			return selectionSort();
+		else if(desicion==2)
+			return insertionSort();
+	}
+
+
+	public int compareTo(Object o){
+		return 1;
+	}
+}
